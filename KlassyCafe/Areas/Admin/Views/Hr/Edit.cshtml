@@ -1,0 +1,183 @@
+﻿@model TbEmployee
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="app-content content">
+    <div class="content-overlay"></div>
+    <div class="header-navbar-shadow"></div>
+    <div class="content-wrapper">
+        <div class="content-header row">
+            <div class="content-header-left col-md-9 col-12 mb-2">
+                <div class="row breadcrumbs-top">
+                    <div class="col-12">
+                        <h2 class="content-header-title float-left mb-0">HR</h2>&nbsp;&nbsp;&nbsp;
+                        <div class="breadcrumb-wrapper col-12">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Admin</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="#">Employees</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    <a href="#">Add/Edit</a>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="content-body">
+            <section id="basic-horizontal-layouts">
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Edit Form</h4>
+                            </div>
+                            <div class="card-body">
+                                <form class="form form-horizontal" enctype="multipart/form-data"
+                                      method="post" role="form"
+                                      asp-controller="Hr" asp-action="Save">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Jop</label>
+                                                </div>
+
+
+                                                <select asp-for="JopId" asp-items="@(new SelectList(ViewBag.Jop,"Id","Name"))" class="form-control col-sm-9">
+                                                </select>
+                                                <span class="Lable danger" asp-validation-for="JopId"></span>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">National ID</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="NationalId" type="number" id="first-name" class="form-control" placeholder="National ID">
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Employee Name</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Name" type="text" id="first-name" class="form-control" placeholder="Employee Name" >
+                                                </div>
+                                                <span class="Lable danger" asp-validation-for="Name"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Address</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Address" type="text" id="first-name" class="form-control" placeholder="Address">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Phone</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Phone" type="text" id="first-name" class="form-control" placeholder="Phone">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Cockes</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Cockes" type="text" id="first-name" class="form-control" placeholder="Cockes">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Facebook Link</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Facebook" type="text" id="first-name" class="form-control" placeholder="Facebook Link">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Twitter Link</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Twitter" type="text" id="first-name" class="form-control" placeholder="Twitter Link">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Instagram Link</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input asp-for="Insta" type="text" id="first-name" class="form-control" placeholder="Instagram Link">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="mb-1 row">
+
+
+                                                <div class="col-sm-3">
+                                                    <label class="col-form-label">Item Image</label>
+                                                </div>
+                                                <div class="col-sm-9">
+                                                    <input type="file" name="formFiles" class="form-control">
+                                                    <input type="hidden" asp-for="ImageName" />
+                                                </div>
+                                                <div>
+
+                                                </div>
+                                                <div class="col-sm-9 offset-md-3">
+                                                    <button type="Submit" class="btn btn-primary me-1 waves-effect waves-float waves-light">Submit</button>
+                                                    <button type="reset" class="btn btn-outline-secondary waves-effect">Reset</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,486 @@
+﻿@model HomeModel;
+@{
+    ViewData["Title"] = "Index";
+}
+
+@****** Main Banner Area Start ******@
+<div id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="left-content">
+                    <div class="inner-content">
+                        <h4>KlassyCafe</h4>
+                        <h6>THE BEST EXPERIENCE</h6>
+                        <div class="main-white-button scroll-to-section">
+                            <a href="#reservation">Make A Reservation</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="main-banner header-text">
+                    <div class="Modern-Slider">
+                       
+                        @foreach (var Img in Model.LstSlider)
+                        {
+
+                            <div class="item">
+                                <div class="img-fill">
+                                    <img src="@string.Format("/Uploads/{0}",Img.ImageName)" alt="Sorry Slider Image Not Found ">
+                                </div>
+                            </div>
+                        }
+
+                       
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@****** Main Banner Area End *****
+    ***** About Area Starts ******@
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="left-text-content">
+                    <div class="section-heading">
+                        <h6>About Us</h6>
+                        <h2>We Leave A Delicious Memory For You</h2>
+                    </div>
+                    @*message of the resturant*@
+                    <p>Klassy Cafe is one of the best <a href="https://templatemo.com/tag/restaurant" target="_blank" rel="sponsored">restaurant HTML templates</a> with Bootstrap v4.5.2 CSS framework. You can download and feel free to use this website template layout for your restaurant business. You are allowed to use this template for commercial purposes. <br><br>You are NOT allowed to redistribute the template ZIP file on any template donwnload website. Please contact us for more information.</p>
+                    <div class="row">
+                        <div class="col-4">
+                            <img src="~/assets/images/about-thumb-01.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img src="~/assets/images/about-thumb-02.jpg" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img src="~/assets/images/about-thumb-03.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-xs-12">
+                <div class="right-content">
+                    <div class="thumb">
+                        <a rel="nofollow" href="http://youtube.com" target="_blank"><i class="fa fa-play"></i></a>
+                        <img src="~/assets/images/about-video-bg.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+@****** About Area Ends *****
+    ***** Menu Area Starts ******@
+<!--<section class="section" id="menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="section-heading">
+                    <h6>Our Menu</h6>
+                    <h2>Our selection of cakes with quality taste</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-item-carousel">
+        <div class="col-lg-12">
+            <div class="owl-menu-item owl-carousel">-->
+               
+
+                @* Front End Want Be Edeted To Works The Back End Perfictly *@
+                @*@foreach (var Item in Model.LstItems)
+                {
+                <div class="item">
+                    <img style="width: 239.8px; margin-right: 30px;" src="@string.Format("/Uploads/{0}",Item.ImageName)" alt="Sorry Slider Image Not Found ">
+
+                    <div class="price"><h6>$@Item.SalesPrice</h6></div>
+                    <div class='info'>
+                        <h1 class='title'>@Item.ItemName</h1>
+                        <p class='description'>@Item.Disciption </p>
+                        <div class="main-text-button">
+                            <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                        </div>
+                    </div>
+
+                </div>
+                }*@
+                <!--<div class="item">
+            <div class='card card1'>
+                <div class="price"><h6>$14</h6></div>
+                <div class='info'>
+                    <h1 class='title'>Chocolate Cake</h1>
+                    <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                    <div class="main-text-button">
+                        <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <div class="item">
+                    <div class='card card2'>
+                        <div class="price"><h6>$22</h6></div>
+                        <div class='info'>
+                            <h1 class='title'>Klassy Pancake</h1>
+                            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                            <div class="main-text-button">
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class='card card3'>
+                        <div class="price"><h6>$18</h6></div>
+                        <div class='info'>
+                            <h1 class='title'>Tall Klassy Bread</h1>
+                            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                            <div class="main-text-button">
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class='card card4'>
+                        <div class="price"><h6>$10</h6></div>
+                        <div class='info'>
+                            <h1 class='title'>Blueberry CheeseCake</h1>
+                            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                            <div class="main-text-button">
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class='card card5'>
+                        <div class="price"><h6>$8.50</h6></div>
+                        <div class='info'>
+                            <h1 class='title'>Klassy Cup Cake</h1>
+                            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                            <div class="main-text-button">
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class='card card3'>
+                        <div class="price"><h6>$7.25</h6></div>
+                        <div class='info'>
+                            <h1 class='title'>Klassic Cake</h1>
+                            <p class='description'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sedii do eiusmod teme.</p>
+                            <div class="main-text-button">
+                                <div class="scroll-to-section"><a href="#reservation">Make Reservation <i class="fa fa-angle-down"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>-->
+@****** Menu Area Ends *****
+    ***** Chefs Area Starts ******@
+<section class="section" id="chefs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="section-heading">
+                    <h6>Our Chefs</h6>
+                    <h2>We offer the best ingredients for you</h2>
+                </div>
+            </div>
+        </div>
+        @*Make Notes ...we want to add What chef cook
+        and add columns to add Social media links
+        -add migration add column image name to cheffs *@
+        <div class="row">
+            @foreach (var chef in Model.LstCheffs)
+            {
+                <div class="col-lg-4">
+                    <div class="chef-item">
+                        <div class="thumb">
+                            <div class="overlay"></div>
+                            <ul class="social-icons">
+                                <li><a href="@chef.Facebook" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="@chef.Twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="@chef.Insta" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                            <img src="@string.Format("/Uploads/{0}",chef.ImageName)" alt="Sorry Slider Image Not Found ">
+                        </div>
+                        <div class="down-content">
+                            <h4>@chef.Name</h4>
+                            <span>@chef.Cockes</span>
+                        </div>
+                    </div>
+                </div>
+            }
+            
+        </div>
+    </div>
+</section>
+@****** Chefs Area Ends *****
+    ***** Reservation Us Area Starts ******@
+<section class="section" id="reservation">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 align-self-center">
+                <div class="left-text-content">
+                    <div class="section-heading">
+                        <h6>Contact Us</h6>
+                        <h2>Here You Can Make A Reservation Or Just walkin to our cafe</h2>
+                    </div>
+                    <p>Donec pretium est orci, non vulputate arcu hendrerit a. Fusce a eleifend riqsie, namei sollicitudin urna diam, sed commodo purus porta ut.</p>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="phone">
+                                <i class="fa fa-phone"></i>
+                                <h4>Phone Numbers</h4>
+                                <span><a href="#">0121232120</a><br><a href="#">0101201230</a></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="message">
+                                <i class="fa fa-envelope"></i>
+                                <h4>Emails</h4>
+                                <span><a href="#">klassy_resturant@klassy.com</a><br><a href="#">Klassy_Cafe@klassy.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="contact-form">
+                    <form id="contact" asp-controller="Home" asp-action="Addreservation" method="post">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4>Table Reservation</h4>
+                            </div>
+                            <div class="col-lg-6 col-sm-12">
+                                <fieldset>
+                                    <input asp-for="NewReservatio.Name" name="name" type="text" id="name" placeholder="Your Name*" required="">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <fieldset>
+                                    <input name="phone" type="text" id="phone" placeholder="Phone Number*" required="">
+                                </fieldset>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <input asp-for="NewReservatio.NGuests" name="formNGusts" type="number" id="NGusts" placeholder="Number Of Gusts*"  maxlength="2" required="" min="1" max="12" pattern="[0-9]+">
+
+
+                                    @*<select asp-for="NewReservatio.NGuests" value="number-guests" name="number-guests" id="number-guests">
+            <option value="number-guests">Number Of Guests</option>
+            <option value=1 name="1" id="1">1</option>
+            <option value=2 name="2" id="2">2</option>
+            <option value=3 name="3" id="3">3</option>
+            <option value=4 name="4" id="4">4</option>
+            <option value=5 name="5" id="5">5</option>
+            <option value=6 name="6" id="6">6</option>
+            <option value=7 name="7" id="7">7</option>
+            <option value=8 name="8" id="8">8</option>
+            <option value=9 name="9" id="9">9</option>
+            <option value=10 name="10" id="10">10</option>
+            <option value=11 name="11" id="11">11</option>
+            <option value=12 name="12" id="12">12</option>
+        </select>*@
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-6">
+                                <div id="filterDate2">
+                                    <div class="input-group date" data-date-format="yyyy/mm/dd">
+                                        <input asp-for="NewReservatio.Date" name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <fieldset>
+                                    <select asp-for="NewReservatio.Time" value="time" name="time" id="time">
+                                        <option value="time">Time</option>
+                                        <option value="Breakfast" name="Breakfast" id="Breakfast">Breakfast</option>
+                                        <option value="Lunch" name="Lunch" id="Lunch">Lunch</option>
+                                        <option value="Dinner" name="Dinner" id="Dinner">Dinner</option>
+                                    </select>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-lg-6 col-sm-12">
+                                <fieldset>
+                                    <input asp-for="NewReservatio.Email" name="Email" type="text" id="name" placeholder="Your Email*" required="">
+                                </fieldset>
+                            </div>
+
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <textarea asp-for="NewReservatio.Message" name="message" rows="6" id="message" placeholder="Message" required=""></textarea>
+                                </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                                <fieldset>
+                                    <button type="submit" id="form-submit" class="main-button-icon">Make A Reservation</button>
+                                </fieldset>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@****** Reservation Area Ends *****
+    ***** Menu Area Starts ******@
+<section class="section" id="offers">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="section-heading">
+                    <h6>Klassy Week</h6>
+                    <h2>This Week’s Special Meal Offers</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row" id="tabs">
+                    <div class="col-lg-12">
+                        <div class="heading-tabs">
+                            <div class="row">
+                                <div class="col-lg-8 offset-lg-3">
+                                    <ul id="Categories">
+                                        @*<li ><a onclick="JsItems.FilteringData()" href='#tabs-1'><img src="assets/images/tab-icon-01.png" alt="">Breakfast</a></li>
+        <li><a href='#tabs-2'><img src="assets/images/tab-icon-02.png" alt="">Lunch</a></li>
+        <li><a href='#tabs-3'><img src="assets/images/tab-icon-03.png" alt="">Dinner</a></li>*@
+                                        @*<li><a onclick="JsItems.FilteringData(1)"  href=''><img src='assets/images/tab-icon-01.png' alt=''>Bakers</a></li>
+                                        <li><a onclick="JsItems.FilteringData(2)"  href=''><img src='assets/images/tab-icon-01.png' alt=''>Cakes</a></li>
+                                        <li><a onclick="JsItems.FilteringData(3)"  href=''><img src='assets/images/tab-icon-01.png' alt=''>BreakeFast</a></li>
+                                        <li><a onclick="JsItems.FilteringData(4)"  href=''><img src='assets/images/tab-icon-01.png' alt=''>Lunch</a></li>
+                                        <li><a onclick="JsItems.FilteringData(5)"  href=''><img src='assets/images/tab-icon-01.png' alt=''>Dinner</a></li>*@
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <section class='tabs-content'>
+                            <article id='tabs-1'>
+                                <div class="row">
+
+
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div id="RMenue" class="left-list">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-lg-6">
+                                        <div style="" class="row">
+                                            <div id="LMenue" class="right-list">
+
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                            </article>
+                            @*<article id='tabs-2'>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="left-list">
+                                                @foreach (var item in Model.LstItems)
+                                                {
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img style="float: left; width: 100px; max-width: 100px; margin-right: 20px; border-radius: 5px;" src="@string.Format("/Uploads/{0}",item.ImageName)" alt="Sorry Slider Image Not Found ">
+                                                            <h4>@item.ItemName</h4>
+                                                            <p>@item.Disciption</p>
+                                                            <div class="price">
+                                                                <h6>$@item.SalesPrice</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div class="right-list">
+                                                @foreach (var item in Model.LstItems)
+                                                {
+                                                    <div class="col-lg-12">
+                                                        <div class="tab-item">
+                                                            <img style="float: left; width: 100px; max-width: 100px; margin-right: 20px; border-radius: 5px;" src="@string.Format("/Uploads/{0}",item.ImageName)" alt="Sorry Slider Image Not Found ">
+                                                            <h4>@item.ItemName</h4>
+                                                            <p>@item.Disciption</p>
+                                                            <div class="price">
+                                                                <h6>$@item.SalesPrice</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <article id='tabs-3'>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div id="LLMenue" class="left-list">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="row">
+                                            <div id="RRMenue" class="right-list">
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>*@
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@****** Chefs Area Ends ******@
+@section Scripts
+{
+    <script src="~/assets/Modules/Helper.js"></script>
+
+    <script src="~/assets/Modules/JsItems.js"></script>
+
+    <script src="~/assets/Modules/JsCategories.js"></script>
+}
+
